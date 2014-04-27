@@ -15,8 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 import android.os.Build;
+
 import com.lowbrassrage.hotpotato.WiFiDirectBroadcastReceiver;
 
 public class MainActivity extends ActionBarActivity {
@@ -38,11 +40,16 @@ public class MainActivity extends ActionBarActivity {
         mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
         mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
         mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
+        
+        //Setting up the main page buttons
+        setupCreateButton();
+        setupSettingsButton();
+        setupCreditsButton();
+        setupJoinGameButton();
 
     }
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
+	public void onReceive(Context context, Intent intent) {
     	
     	String action = intent.getAction();
         if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
@@ -63,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Context.registerReceiver(mReceiver, mIntentFilter);
+		//Context.registerReceiver(mReceiver, mIntentFilter);
     }
     /* unregister the broadcast receiver */
     @Override
@@ -71,4 +78,58 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
         unregisterReceiver(mReceiver);
     }
+    
+    private void setupCreateButton()
+    {
+    	Button createButton = (Button) findViewById(R.id.CreateGameButton);
+    	createButton.setOnClickListener(new View.OnClickListener() 
+    	{
+			
+			@Override
+			public void onClick(View v) {
+				setContentView(R.layout.create_game_page);
+			}
+		});
+    	
+    }
+    
+    private void setupJoinGameButton() {
+		// TODO Auto-generated method stub
+    	Button joinGameButton = (Button) findViewById(R.id.JoinGameButton);
+    	joinGameButton.setOnClickListener(new View.OnClickListener() 
+    	{
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//setContentView(R.layout.join_game_page);
+			}
+		});
+		
+	}
+
+	private void setupCreditsButton() {
+		// TODO Auto-generated method stub
+		Button setupCreditsButton = (Button) findViewById(R.id.CreditsButton);
+    	setupCreditsButton.setOnClickListener(new View.OnClickListener() 
+    	{
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//setContentView(R.layout.credits_page);
+			}
+		});
+	}
+
+	private void setupSettingsButton() {
+		// TODO Auto-generated method stub
+		Button setupSettingsButton = (Button) findViewById(R.id.SettingsButton);
+    	setupSettingsButton.setOnClickListener(new View.OnClickListener() 
+    	{
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//setContentView(R.layout.settings_page);
+			}
+		});
+	}
 }
