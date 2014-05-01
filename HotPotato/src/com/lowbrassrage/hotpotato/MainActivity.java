@@ -64,7 +64,6 @@ public class MainActivity extends ActionBarActivity {
             	toast.show();
             }
         }
-      
     }
     
     @Override
@@ -104,7 +103,6 @@ public class MainActivity extends ActionBarActivity {
 				//setContentView(R.layout.join_game_page);
 			}
 		});
-		
 	}
 
 	private void setupCreditsButton() {

@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
 
-</LinearLayout>
+    <Button
+        android:id="@+id/joinSelectedGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Join Selected" />
+
+    <ListView
+        android:id="@+id/lobbyList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/joinSelectedGameButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/autoCompleteTextView1" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/availableLobbies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="Available Lobbies"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/availableLobbies"
+        android:ems="10"
+        android:text="UserName" >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+</RelativeLayout>
