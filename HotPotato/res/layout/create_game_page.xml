@@ -5,16 +5,16 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:id="@+id/StartGame"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:text="Start Game" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/GameSettings"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:text="Create Game Page"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#0000FF"
+        android:textColor="#3366FF"
         android:textSize="35sp" />
 
     <TextView
@@ -45,7 +45,7 @@
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/GameSettings"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" >
 

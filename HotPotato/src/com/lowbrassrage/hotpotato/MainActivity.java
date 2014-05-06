@@ -30,7 +30,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_screen);
         mManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
         mChannel = mManager.initialize(this, getMainLooper(), null);
         mReceiver = new WiFiDirectBroadcastReceiver(mManager, mChannel, this);
@@ -49,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    //@Override
 	public void onReceive(Context context, Intent intent) {
     	
     	String action = intent.getAction();
@@ -78,6 +80,7 @@ public class MainActivity extends ActionBarActivity {
         unregisterReceiver(mReceiver);
     }
     
+    //main page button
     private void setupCreateButton()
     {
     	Button createButton = (Button) findViewById(R.id.CreateGameButton);
@@ -92,6 +95,7 @@ public class MainActivity extends ActionBarActivity {
     	
     }
     
+    //main page button
     private void setupJoinGameButton() {
 		// TODO Auto-generated method stub
     	Button joinGameButton = (Button) findViewById(R.id.JoinGameButton);
@@ -100,11 +104,26 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//setContentView(R.layout.join_game_page);
+				setContentView(R.layout.join_game_page);
 			}
 		});
 	}
-
+    
+    //join game page button
+    private void setupJoinSelectedButton()
+    {
+    	Button setupJoinSelectedButton = (Button) findViewById(R.id.joinSelectedGameButton);
+    	setupJoinSelectedButton.setOnClickListener(new View.OnClickListener()
+    	{
+    		@Override
+    		public void onClick(View v)
+    		{
+    			//put stuff here
+    		}
+    	});
+    }
+    
+    //main page button
 	private void setupCreditsButton() {
 		// TODO Auto-generated method stub
 		Button setupCreditsButton = (Button) findViewById(R.id.CreditsButton);
@@ -113,11 +132,12 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//setContentView(R.layout.credits_page);
+				setContentView(R.layout.credits_page);
 			}
 		});
 	}
-
+	
+	//main page button
 	private void setupSettingsButton() {
 		// TODO Auto-generated method stub
 		Button setupSettingsButton = (Button) findViewById(R.id.SettingsButton);
@@ -126,8 +146,20 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//setContentView(R.layout.settings_page);
+				setContentView(R.layout.settings_page);
 			}
 		});
+	}
+    	
+    //easy button setup
+    private void setupEasyButton() {
+    	Button setupEasyButton = (Button) findViewById(R.id.EasyButton);
+    	setupEasyButton.setOnClickListener(new View.OnClickListener()
+    	{
+    		@Override
+    		public void onClick(View v){
+    			//setContentView(R.layout.game_page);
+    		}
+    	});
 	}
 }
