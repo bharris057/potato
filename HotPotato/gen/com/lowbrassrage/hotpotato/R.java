@@ -986,15 +986,15 @@ containing a value of this type.
     public static final class id {
         public static final int BJHoward=0x7f050045;
         public static final int CheckWifi=0x7f05003d;
-        public static final int CreateGameButton=0x7f05004d;
+        public static final int CreateGameButton=0x7f05004c;
         public static final int CreditTitle=0x7f050043;
         public static final int CreditsButton=0x7f05004f;
         public static final int DevonEllis=0x7f050044;
         public static final int EasyButton=0x7f050047;
         public static final int GameSettings=0x7f050040;
         public static final int JessicaKnight=0x7f050046;
-        public static final int JoinGameButton=0x7f05004e;
-        public static final int SettingsButton=0x7f05004c;
+        public static final int JoinGameButton=0x7f05004d;
+        public static final int SettingsButton=0x7f05004e;
         public static final int StartGame=0x7f05003f;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;

@@ -1,8 +1,6 @@
 package com.lowbrassrage.hotpotato;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,15 +8,9 @@ import android.content.IntentFilter;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-import android.os.Build;
-
 import com.lowbrassrage.hotpotato.WiFiDirectBroadcastReceiver;
 
 public class MainActivity extends ActionBarActivity {
@@ -51,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     //@Override
-	public void onReceive(Context context, Intent intent) {
+	protected void onReceive(Context context, Intent intent) {
     	
     	String action = intent.getAction();
         if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
@@ -139,7 +131,6 @@ public class MainActivity extends ActionBarActivity {
 	
 	//main page button
 	private void setupSettingsButton() {
-		// TODO Auto-generated method stub
 		Button setupSettingsButton = (Button) findViewById(R.id.SettingsButton);
     	setupSettingsButton.setOnClickListener(new View.OnClickListener() 
     	{
