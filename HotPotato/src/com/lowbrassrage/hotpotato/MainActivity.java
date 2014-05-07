@@ -15,24 +15,13 @@ import com.lowbrassrage.hotpotato.WiFiDirectBroadcastReceiver;
 
 public class MainActivity extends ActionBarActivity {
 	
-	WifiP2pManager mManager;
-	Channel mChannel;
-	BroadcastReceiver mReceiver;
+	
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
         setContentView(R.layout.main_screen);
-        mManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
-        mChannel = mManager.initialize(this, getMainLooper(), null);
-        mReceiver = new WiFiDirectBroadcastReceiver(mManager, mChannel, this);
-        
-        IntentFilter mIntentFilter = new IntentFilter();
-        mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
-        mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
-        mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
-        mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
+       
         
         //Setting up the main page buttons
         setupCreateButton();
@@ -42,40 +31,6 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    //@Override
-	protected void onReceive(Context context, Intent intent) {
-    	
-    	String action = intent.getAction();
-        if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
-            int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
-            if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
-                // Wifi P2P is enabled
-            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P enabled", Toast.LENGTH_LONG);
-            	toast.show();
-            } else {
-                // Wi-Fi P2P is not enabled
-            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P not enabled", Toast.LENGTH_LONG);
-            	toast.show();
-            }
-        }
-    }
-    
-    @Override
-    protected void onResume() {
-        super.onResume();
-		//Context.registerReceiver(mReceiver, mIntentFilter);
-    }
-    /* unregister the broadcast receiver */
-    @Override
-    protected void onPause() {
-        super.onPause();
-        
-        // TODO Register receiver before you try to unregister it when paused
-        // This was crashing the device whenever the activity was paused.
-        //unregisterReceiver(mReceiver);
-        
-    }
-    
     //main page button
     private void setupCreateButton()
     {
@@ -86,7 +41,8 @@ public class MainActivity extends ActionBarActivity {
     		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.create_game_page);
+				Intent intent = new Intent(MainActivity.this, CreateGameActivity.class);
+				startActivity(intent);
 			}
 		});
     	
