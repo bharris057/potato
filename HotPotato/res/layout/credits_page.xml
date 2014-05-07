@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Credits"
+        android:text="@string/Credits"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="60sp" />
 
@@ -21,7 +21,7 @@
         android:layout_below="@+id/CreditTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="81dp"
-        android:text="Devon Ellis"
+        android:text= "@string/DevonEllis"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="35sp" />
 
@@ -32,7 +32,7 @@
         android:layout_alignLeft="@+id/CreditTitle"
         android:layout_below="@+id/DevonEllis"
         android:layout_marginTop="66dp"
-        android:text="BJ Howard"
+        android:text="@string/BJHoward"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="35sp" />
 
@@ -43,7 +43,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
-        android:text="Jessica Knight"
+        android:text="@string/JessicaKnight"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="35sp" />
     

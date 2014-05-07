@@ -10,7 +10,7 @@
         android:layout_marginTop="85dp"
         android:layout_centerHorizontal="true"
         android:onClick="setupCreateButton"
-        android:text="Create" />
+        android:text="@string/CreateButton" />
 
      <Button
          android:id="@+id/JoinGameButton"
@@ -20,7 +20,7 @@
          android:layout_centerHorizontal="true"
          android:layout_marginTop="35dp"
          android:height="65dp"
-         android:text="Join "
+         android:text="@string/JoinButton"
          android:width="100dp" />
 
      <Button
@@ -31,7 +31,7 @@
          android:layout_centerHorizontal="true"
          android:layout_marginTop="36dp"
          android:height="65dp"
-         android:text="Settings"
+         android:text="@string/SettingsButton"
          android:width="100dp" />
 
      <Button
@@ -42,6 +42,6 @@
          android:layout_centerHorizontal="true"
          android:layout_marginBottom="15dp"
          android:height="65dp"
-         android:text="Credits" />
+         android:text="@string/CreditsButton" />
   
 </RelativeLayout>

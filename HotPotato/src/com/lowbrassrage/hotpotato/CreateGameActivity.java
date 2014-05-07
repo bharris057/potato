@@ -1,7 +1,6 @@
 package com.lowbrassrage.hotpotato;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -16,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import android.os.Build;
 
 public class CreateGameActivity extends Activity {
 
@@ -61,18 +59,18 @@ public class CreateGameActivity extends Activity {
 	        }
 	    }
 		
-		@Override
-	    protected void onResume() {
-	        super.onResume();
-			//registerReceiver(mReceiver, mIntentFilter);
-	    }
-	    /* unregister the broadcast receiver */
-	    @Override
-	    protected void onPause() {
-	        super.onPause();
-	        //unregisterReceiver(mReceiver);
-	        
-	    }
+	@Override
+    protected void onResume() {
+        super.onResume();
+		//registerReceiver(mReceiver, mIntentFilter);
+    }
+    /* unregister the broadcast receiver */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //unregisterReceiver(mReceiver);
+        
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
