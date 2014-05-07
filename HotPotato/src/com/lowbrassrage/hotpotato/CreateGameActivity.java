@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
 import com.lowbrassrage.hotpotato.WiFiDirectBroadcastReceiver;
 
 public class CreateGameActivity extends Activity {
@@ -44,25 +44,7 @@ public class CreateGameActivity extends Activity {
 	     //Note! Activity_main is for TESTING ONLY. Change to "Create Game Page" For production
 	     setContentView(R.layout.activity_main);
 	}
-	
-	//TODO figure out inheritance for this (Should be from class WiFiDirectBroadcastReceiver)
-	//@Override
-	protected void onReceive(Context context, Intent intent) {
-    	
-    	String action = intent.getAction();
-        if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
-            int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
-            if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
-                // Wifi P2P is enabled
-            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P enabled", Toast.LENGTH_LONG);
-            	toast.show();
-            } else {
-                // Wi-Fi P2P is not enabled
-            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P not enabled", Toast.LENGTH_LONG);
-            	toast.show();
-            }
-        }
-    }
+	//Moved onReceive() to WiFiDirectBroadcastReceiver where it belongs
 		
 	@Override
     protected void onResume() {
@@ -122,9 +104,9 @@ public class CreateGameActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				//On Click goes here
-				//Intent intent = new Intent();
-				//Context context = null;
-				//onReceive(context.getApplicationContext(), intent);
+				
+				//mReceiver.onReceive(getApplicationContext(), getIntent());
+				
 			}
 		});
     	
