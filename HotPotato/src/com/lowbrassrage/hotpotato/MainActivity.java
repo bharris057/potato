@@ -69,7 +69,10 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        unregisterReceiver(mReceiver);
+        
+        // TODO Register receiver before you try to unregister it when paused
+        //unregisterReceiver(mReceiver);
+        
     }
     
     //main page button
