@@ -18,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
 	WifiP2pManager mManager;
 	Channel mChannel;
 	BroadcastReceiver mReceiver;
+	IntentFilter mIntentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,15 +64,12 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-		//Context.registerReceiver(mReceiver, mIntentFilter);
+		//registerReceiver(mReceiver, mIntentFilter);
     }
     /* unregister the broadcast receiver */
     @Override
     protected void onPause() {
         super.onPause();
-        
-        // TODO Register receiver before you try to unregister it when paused
-        // This was crashing the device whenever the activity was paused.
         //unregisterReceiver(mReceiver);
         
     }
@@ -86,7 +84,9 @@ public class MainActivity extends ActionBarActivity {
     		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.create_game_page);
+				//setContentView(R.layout.create_game_page);
+				Intent intent = new Intent(MainActivity.this, CreateGameActivity.class);
+				startActivity(intent);
 			}
 		});
     	
