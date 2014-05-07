@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">HotPotato</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="hello_world">Greetings!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_create_game">CreateGameActivity</string>
     <string name="DevonEllis">Devon Ellis</string>
@@ -17,7 +17,7 @@
     <string name="CreditsButton">Credits</string>
     <string name="NamePrompt">Enter in Name:</string>
 	<string name="main_banner_desc">Kill, Kill, Kill!</string>
-	<string name="title_activity_create_game">CreateGameActivity</string>
+	
     
     
 
