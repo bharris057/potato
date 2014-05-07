@@ -71,6 +71,7 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
         
         // TODO Register receiver before you try to unregister it when paused
+        // This was crashing the device whenever the activity was paused.
         //unregisterReceiver(mReceiver);
         
     }
@@ -81,7 +82,8 @@ public class MainActivity extends ActionBarActivity {
     	Button createButton = (Button) findViewById(R.id.CreateGameButton);
     	createButton.setOnClickListener(new View.OnClickListener() 
     	{
-			
+			// TODO change all buttons from changing ContentView to actually making new activities
+    		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
 				setContentView(R.layout.create_game_page);
@@ -92,13 +94,13 @@ public class MainActivity extends ActionBarActivity {
     
     //main page button
     private void setupJoinGameButton() {
-		// TODO Auto-generated method stub
     	Button joinGameButton = (Button) findViewById(R.id.JoinGameButton);
     	joinGameButton.setOnClickListener(new View.OnClickListener() 
     	{
+    		// TODO change all buttons from changing ContentView to actually making new activities
+    		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				setContentView(R.layout.join_game_page);
 			}
 		});
@@ -110,6 +112,8 @@ public class MainActivity extends ActionBarActivity {
     	Button setupJoinSelectedButton = (Button) findViewById(R.id.joinSelectedGameButton);
     	setupJoinSelectedButton.setOnClickListener(new View.OnClickListener()
     	{
+    		// TODO change all buttons from changing ContentView to actually making new activities
+    		// This is actually how Android is supposed to handle multiple pages. 
     		@Override
     		public void onClick(View v)
     		{
@@ -120,13 +124,13 @@ public class MainActivity extends ActionBarActivity {
     
     //main page button
 	private void setupCreditsButton() {
-		// TODO Auto-generated method stub
 		Button setupCreditsButton = (Button) findViewById(R.id.CreditsButton);
     	setupCreditsButton.setOnClickListener(new View.OnClickListener() 
     	{
+    		// TODO change all buttons from changing ContentView to actually making new activities
+    		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				setContentView(R.layout.credits_page);
 			}
 		});
@@ -137,9 +141,10 @@ public class MainActivity extends ActionBarActivity {
 		Button setupSettingsButton = (Button) findViewById(R.id.SettingsButton);
     	setupSettingsButton.setOnClickListener(new View.OnClickListener() 
     	{
+    		// TODO change all buttons from changing ContentView to actually making new activities
+    		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				setContentView(R.layout.settings_page);
 			}
 		});
@@ -150,6 +155,8 @@ public class MainActivity extends ActionBarActivity {
     	Button setupEasyButton = (Button) findViewById(R.id.EasyButton);
     	setupEasyButton.setOnClickListener(new View.OnClickListener()
     	{
+    		// TODO change all buttons from changing ContentView to actually making new activities
+    		// This is actually how Android is supposed to handle multiple pages. 
     		@Override
     		public void onClick(View v){
     			//setContentView(R.layout.game_page);
