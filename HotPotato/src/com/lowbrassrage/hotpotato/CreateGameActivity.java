@@ -14,7 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
+import com.lowbrassrage.hotpotato.WiFiDirectBroadcastReceiver;
 
 public class CreateGameActivity extends Activity {
 
@@ -37,27 +39,30 @@ public class CreateGameActivity extends Activity {
 	     mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
 	     mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
 	     
+	     
+	     setupWifiEnable();
 	     //Note! Activity_main is for TESTING ONLY. Change to "Create Game Page" For production
 	     setContentView(R.layout.activity_main);
 	}
 	
+	//TODO figure out inheritance for this (Should be from class WiFiDirectBroadcastReceiver)
 	//@Override
-		protected void onReceive(Context context, Intent intent) {
-	    	
-	    	String action = intent.getAction();
-	        if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
-	            int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
-	            if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
-	                // Wifi P2P is enabled
-	            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P enabled", Toast.LENGTH_LONG);
-	            	toast.show();
-	            } else {
-	                // Wi-Fi P2P is not enabled
-	            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P not enabled", Toast.LENGTH_LONG);
-	            	toast.show();
-	            }
-	        }
-	    }
+	protected void onReceive(Context context, Intent intent) {
+    	
+    	String action = intent.getAction();
+        if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
+            int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+            if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+                // Wifi P2P is enabled
+            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P enabled", Toast.LENGTH_LONG);
+            	toast.show();
+            } else {
+                // Wi-Fi P2P is not enabled
+            	Toast toast = Toast.makeText(getApplicationContext(), "Wifi P2P not enabled", Toast.LENGTH_LONG);
+            	toast.show();
+            }
+        }
+    }
 		
 	@Override
     protected void onResume() {
@@ -109,4 +114,19 @@ public class CreateGameActivity extends Activity {
 		}
 	}
 
+	private void setupWifiEnable()
+    {
+    	Button createButton = (Button) findViewById(R.id.CheckWifi);
+    	createButton.setOnClickListener(new View.OnClickListener() 
+    	{ 
+			@Override
+			public void onClick(View v) {
+				//On Click goes here
+				//Intent intent = new Intent();
+				//Context context = null;
+				//onReceive(context.getApplicationContext(), intent);
+			}
+		});
+    	
+    }
 }
