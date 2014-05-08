@@ -1,10 +1,17 @@
 package com.lowbrassrage.hotpotato;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.wifi.p2p.WifiP2pManager;
+import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+import com.lowbrassrage.hotpotato.WiFiDirectBroadcastReceiver;
 
 public class MainActivity extends ActionBarActivity {
 	
@@ -50,7 +57,9 @@ public class MainActivity extends ActionBarActivity {
     		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.join_game_page);
+				Intent intent = new Intent(MainActivity.this, JoinGameActivity.class);
+				startActivity(intent);
+
 			}
 		});
 	}
@@ -80,7 +89,8 @@ public class MainActivity extends ActionBarActivity {
     		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.credits_page);
+				Intent intent = new Intent(MainActivity.this, ShowCreditsPageActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
@@ -94,7 +104,8 @@ public class MainActivity extends ActionBarActivity {
     		// This is actually how Android is supposed to handle multiple pages. 
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.settings_page);
+				Intent intent = new Intent(MainActivity.this, MainPageSettingsActivity.class);
+				startActivity(intent);
 			}
 		});
 	}

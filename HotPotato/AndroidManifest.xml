@@ -36,6 +36,38 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lowbrassrage.HotPotato.MainActivity" />
         </activity>
+        <activity
+            android:name="com.lowbrassrage.hotpotato.JoinGameActivity"
+            android:label="@string/title_activity_join_game"
+            android:parentActivityName="com.lowbrassrage.hotpotato.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lowbrassrage.hotpotato.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lowbrassrage.hotpotato.MainPageSettingsActivity"
+            android:label="@string/title_activity_main_page_settings"
+            android:parentActivityName="com.lowbrassrage.hotpotato.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lowbrassrage.hotpotato.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lowbrassrage.hotpotato.ShowCreditsPageSettings"
+            android:label="@string/title_activity_show_credits_page_settings"
+            android:parentActivityName="com.lowbrassrage.hotpotato.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lowbrassrage.hotpotato.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lowbrassrage.hotpotato.ShowCreditsPageActivity"
+            android:label="@string/title_activity_show_credits_page"
+            android:parentActivityName="com.lowbrassrage.hotpotato.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lowbrassrage.hotpotato.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

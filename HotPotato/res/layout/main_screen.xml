@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <ImageView
+        android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/main_banner_desc"
+        android:src="@drawable/main_banner" />
+    
      <Button
         android:id="@+id/CreateGameButton"
         android:layout_width="100dp"
@@ -10,7 +18,7 @@
         android:layout_marginTop="85dp"
         android:layout_centerHorizontal="true"
         android:onClick="setupCreateButton"
-        android:text="@string/CreateButton" />
+        android:text="Create" />
 
      <Button
          android:id="@+id/JoinGameButton"
@@ -20,7 +28,7 @@
          android:layout_centerHorizontal="true"
          android:layout_marginTop="35dp"
          android:height="65dp"
-         android:text="@string/JoinButton"
+         android:text="Join "
          android:width="100dp" />
 
      <Button
@@ -31,7 +39,7 @@
          android:layout_centerHorizontal="true"
          android:layout_marginTop="36dp"
          android:height="65dp"
-         android:text="@string/SettingsButton"
+         android:text="Settings"
          android:width="100dp" />
 
      <Button
@@ -42,6 +50,6 @@
          android:layout_centerHorizontal="true"
          android:layout_marginBottom="15dp"
          android:height="65dp"
-         android:text="@string/CreditsButton" />
+         android:text="Credits" />
   
 </RelativeLayout>

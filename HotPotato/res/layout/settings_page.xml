@@ -5,14 +5,14 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/NameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/NamePrompt"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView1"
+        android:id="@+id/EnteredNameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" >
